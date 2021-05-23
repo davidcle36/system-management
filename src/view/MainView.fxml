@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxWidth="1000.0" minHeight="600.0" minWidth="1140.0" prefHeight="600.0" prefWidth="1140.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="600.0" prefWidth="1140.0">
+         <children>
+            <TabPane fx:id="mainTabs" prefHeight="600.0" prefWidth="1140.0" style="-fx-border-radius: 20;" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab fx:id="customerTab" text="Customers">
+                  <content>
+                    <AnchorPane>
+                           <children>
+                              <HBox prefHeight="577.0" prefWidth="1140.0">
+                                 <children>
+                                    <VBox alignment="BOTTOM_CENTER" prefHeight="596.0" prefWidth="126.0" spacing="30.0">
+                                       <padding>
+                                          <Insets bottom="32.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                       <children>
+                                          <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Button fx:id="btnRecord" mnemonicParsing="false" onAction="#onActionRecord" text="Get Record" />
+                                             </children>
+                                          </VBox>
+                                          <Button fx:id="addCustomerBtn" mnemonicParsing="false" onAction="#onActionAddCustomerHandler" prefHeight="50.0" prefWidth="100.0" text="Add Customer" textAlignment="CENTER" wrapText="true">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="updateCustomerBtn" disable="true" mnemonicParsing="false" onAction="#onActionUpdateCustomerHandler" prefHeight="50.0" prefWidth="100.0" text="Update Customer" textAlignment="CENTER" wrapText="true">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="deleteCustomerBtn" disable="true" mnemonicParsing="false" onAction="#onActionDeleteCustomerHandler" prefHeight="50.0" prefWidth="100.0" text="Delete Customer" textAlignment="CENTER" wrapText="true">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="addAppointmentBtn" disable="true" mnemonicParsing="false" onAction="#onActionAddAppointmentHandler" prefHeight="50.0" prefWidth="100.0" text="Add Appointment" textAlignment="CENTER" wrapText="true">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </VBox>
+                                    <TableView fx:id="customerTable" minWidth="1000.0" prefHeight="585.0" prefWidth="1000.0">
+                                       <columns>
+                                          <TableColumn fx:id="ColCustomerId" prefWidth="40.0" text="ID" />
+                                          <TableColumn fx:id="ColCustomerName" prefWidth="140.0" text="Name" />
+                                          <TableColumn fx:id="ColCustomerAddress" prefWidth="81.0" text="Address" />
+                                          <TableColumn fx:id="ColCustomerPostalCode" prefWidth="89.0" text="Postal Code" />
+                                          <TableColumn fx:id="ColCustomerPhone" prefWidth="96.0" text="Phone" />
+                                          <TableColumn fx:id="ColCustomerCreateDate" prefWidth="134.0" text="Create Date" />
+                                          <TableColumn fx:id="ColCustomerCreatedBy" prefWidth="102.0" text="Created By" />
+                                          <TableColumn fx:id="ColCustomerLastUpdate" prefWidth="135.0" text="Last Update" />
+                                          <TableColumn fx:id="ColCustomerLastUpdatedBy" minWidth="0.0" prefWidth="123.0" text="Last Updated By" />
+                                          <TableColumn fx:id="ColCustomerDivisionId" prefWidth="96.0" text="Division ID" />
+                                          <TableColumn fx:id="ColCustomerDivision" prefWidth="200.0" text="Division" />
+                                       </columns>
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                                       </HBox.margin>
+                                    </TableView>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab fx:id="appointmentTab" text="Appointments">
+                  <content>
+                    <AnchorPane maxHeight="611.0" prefHeight="599.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="58.0" prefWidth="1140.0" spacing="50.0">
+                                 <padding>
+                                    <Insets left="30.0" />
+                                 </padding>
+                                 <children>
+                                    <Label fx:id="labelMonth" text="January">
+                                       <font>
+                                          <Font name="System Bold" size="27.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label fx:id="labelDayOfWeek" text="Monday">
+                                       <font>
+                                          <Font size="27.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox layoutY="46.0" prefHeight="531.0" prefWidth="1140.0">
+                                 <children>
+                                    <VBox alignment="BOTTOM_CENTER" prefHeight="551.0" prefWidth="126.0" spacing="30.0">
+                                       <padding>
+                                          <Insets bottom="32.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                       <children>
+                                          <RadioButton fx:id="RadioButtonMonth" mnemonicParsing="false" onAction="#onActionRBMonth" text="Month">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="aview" />
+                                             </toggleGroup>
+                                          </RadioButton>
+                                          <RadioButton fx:id="RadioButtonWeek" mnemonicParsing="false" onAction="#onActionRBWeek" text="Week" toggleGroup="$aview" />
+                                          <Button fx:id="nextDate" minHeight="45.0" mnemonicParsing="false" onAction="#onActionNextDate" prefWidth="80.0" text="Next Month" textAlignment="CENTER" wrapText="true" />
+                                          <Button fx:id="prevDate" minHeight="45.0" mnemonicParsing="false" onAction="#onActionPrevDate" prefWidth="80.0" text="Previous Month" textAlignment="CENTER" wrapText="true" />
+                                          <Button fx:id="updateAppointmentBtn" disable="true" mnemonicParsing="false" onAction="#onActionUpdateAppointmentHandler" prefHeight="50.0" prefWidth="100.0" text="Update Appointment" textAlignment="CENTER" wrapText="true">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="deleteAppointmentBtn" disable="true" mnemonicParsing="false" onAction="#onActionDeleteAppointmentHandler" prefHeight="50.0" prefWidth="100.0" text="Delete Appointment" textAlignment="CENTER" wrapText="true">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </VBox>
+                                    <TableView fx:id="appointmentTable" minWidth="980.0" prefHeight="557.0" prefWidth="1000.0">
+                                       <columns>
+                                          <TableColumn fx:id="ColAppointmentId" prefWidth="57.0" text="ID" />
+                                          <TableColumn fx:id="ColAppointmentTitle" prefWidth="93.0" text="Titles" />
+                                          <TableColumn fx:id="ColAppointmentDescription" prefWidth="153.0" text="Description" />
+                                          <TableColumn fx:id="ColAppointmentLocation" prefWidth="108.0" text="Location" />
+                                          <TableColumn fx:id="ColAppointmentContactId" prefWidth="90.0" text=" Contact Id" />
+                                          <TableColumn fx:id="ColAppointmentContactName" prefWidth="90.0" text="Contact Name" />
+                                          <TableColumn fx:id="ColAppointmentType" prefWidth="135.0" text="Type" />
+                                          <TableColumn fx:id="ColAppointmentStart" prefWidth="141.0" text="Start" />
+                                          <TableColumn fx:id="ColAppointmentEnd" minWidth="0.0" prefWidth="137.0" text="End" />
+                                          <TableColumn fx:id="ColAppointmentCustomerId" prefWidth="85.0" text="Customer Id" />
+                                       </columns>
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                                       </HBox.margin>
+                                    </TableView>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

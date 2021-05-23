@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AppointmentController">
+   <children>
+      <Label fx:id="appointmentHeader" layoutX="25.0" layoutY="24.0" text="Add Appointment">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <GridPane alignment="BOTTOM_LEFT" layoutX="50.0" layoutY="50.0" prefHeight="301.0" prefWidth="700.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="184.0" minWidth="10.0" prefWidth="98.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="192.0" minWidth="10.0" prefWidth="159.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="225.0" minWidth="10.0" prefWidth="70.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="225.0" minWidth="10.0" prefWidth="106.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="238.0" minWidth="10.0" prefWidth="135.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="51.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="71.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="72.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="54.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="53.0" minHeight="0.0" prefHeight="46.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="69.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="labelAppointmentId" contentDisplay="BOTTOM" text="Appointment ID" wrapText="true" />
+            <Label fx:id="labelAppointmentTitle" text="Title" wrapText="true" GridPane.rowIndex="1" />
+            <Label fx:id="labelAppointmentDescription" text="Description" wrapText="true" GridPane.rowIndex="2" />
+            <Label fx:id="labelAppointmentLocation" text="Location" wrapText="true" GridPane.rowIndex="3" />
+            <Label fx:id="labelAppointmentCustomerId" text="Customer ID" wrapText="true" GridPane.columnIndex="2">
+               <padding>
+                  <Insets left="11.0" />
+               </padding>
+            </Label>
+            <Label fx:id="labelAppointmentType" text="Type" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <padding>
+                  <Insets left="11.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin></Label>
+            <Label fx:id="labelAppointmentStart" text="Start Date And Time" wrapText="true" GridPane.rowIndex="5" />
+            <Label fx:id="labelAppointmentEnd" text="End Date And Time" wrapText="true" GridPane.rowIndex="6">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="labelAppointmentContact" text="Contact" wrapText="true" GridPane.rowIndex="4" />
+            <TextField fx:id="TextAppointmentId" disable="true" maxWidth="116.0" prefHeight="25.0" prefWidth="116.0" promptText="Auto Generated" GridPane.columnIndex="1" />
+            <TextField fx:id="TextAppointmentTitle" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="TextAppointmentType" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin></TextField>
+            <TextField fx:id="TextAppointmentCustomerId" maxWidth="119.0" prefHeight="25.0" prefWidth="119.0" GridPane.columnIndex="3" />
+            <TextArea fx:id="TextAppointmentDescription" prefHeight="66.0" prefWidth="115.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="TextAppointmentLocation" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <DatePicker fx:id="dateStart" promptText="dateStart" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </DatePicker>
+            <DatePicker fx:id="dateEnd" promptText="dateEnd" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </DatePicker>
+            <ComboBox fx:id="CBContact" prefHeight="25.0" prefWidth="190.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="timeStart" maxWidth="80.0" prefHeight="25.0" prefWidth="105.0" promptText="HH:MM AM/" text="12:00 AM" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="timeEnd" maxWidth="80.0" prefHeight="25.0" prefWidth="105.0" promptText="HH:MM" text="12:00 AM" GridPane.columnIndex="2" GridPane.rowIndex="6">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </TextField>
+         </children>
+      </GridPane>
+      <Button fx:id="appointmentSaveBtn" layoutX="616.0" layoutY="364.0" mnemonicParsing="false" onAction="#onActionAppointmentSave" text="Save" />
+      <Button fx:id="appointmentCancelBtn" layoutX="682.0" layoutY="364.0" mnemonicParsing="false" onAction="#onActionAppointmentCancel" text="Cancel" />
+   </children>
+</AnchorPane>

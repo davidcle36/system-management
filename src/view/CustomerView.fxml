@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerController">
+    <children>
+        <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="800.0">
+            <children>
+                <HBox alignment="BOTTOM_LEFT" prefHeight="133.0" prefWidth="740.0">
+                    <children>
+                        <Label fx:id="labelCustomerForm" text="Add Customer">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <GridPane alignment="CENTER" prefHeight="382.0" prefWidth="740.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="245.0" minWidth="10.0" prefWidth="85.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="302.0" minWidth="10.0" prefWidth="236.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="247.0" minWidth="10.0" prefWidth="169.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="268.0" minWidth="10.0" prefWidth="254.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label fx:id="labelCustomerId" text="ID:" />
+                        <Label fx:id="labelCustomerAddress" text="Address:" GridPane.rowIndex="2" />
+                        <Label fx:id="labelCustomerPhone" text="Phone:" GridPane.rowIndex="3" />
+                        <Label fx:id="labelCustomerName" text="Name:" GridPane.rowIndex="1" />
+                        <Label fx:id="labelCustomerPostalCode" text="Postal Code:" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                            <padding>
+                                <Insets left="50.0" />
+                            </padding>
+                        </Label>
+                        <TextField fx:id="TextCustomerId" disable="true" maxWidth="123.0" minWidth="50.0" prefHeight="25.0" prefWidth="85.0" promptText="Auto Generated" GridPane.columnIndex="1" />
+                        <TextField fx:id="TextCustomerName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="TextCustomerPhone" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                        <TextField fx:id="TextCustomerPostalCode" maxWidth="120.0" prefWidth="120.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <Label fx:id="labelCustomerDivision" text="Division" GridPane.rowIndex="5" />
+                        <ComboBox fx:id="ComboBoxCustomerDivision" disable="true" onAction="#onActionCBCustomerDivision" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label fx:id="labelCustomerCountry" text="Country:" GridPane.rowIndex="4" />
+                        <ComboBox fx:id="ComboBoxCustomerCountry" onAction="#onActionCBCustomerCountry" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="TextCustomerAddress" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    </children>
+                    <padding>
+                        <Insets top="20.0" />
+                    </padding>
+                    <VBox.margin>
+                        <Insets left="27.0" />
+                    </VBox.margin>
+                </GridPane>
+                <HBox alignment="CENTER_RIGHT" prefHeight="137.0" prefWidth="740.0" spacing="30.0">
+                    <children>
+                        <Button fx:id="BtnCustomerSave" mnemonicParsing="false" onAction="#onActionCustomerSaveHandler" text="Save">
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </padding>
+                        </Button>
+                        <Button fx:id="BtnCustomerCancel" mnemonicParsing="false" onAction="#onActionCustomerCancelHandler" text="Cancel">
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </padding>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="30.0" right="30.0" top="10.0" />
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>
